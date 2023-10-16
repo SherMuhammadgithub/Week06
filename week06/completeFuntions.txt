@@ -1,0 +1,361 @@
+string decideActivity(string temp, string humiduty){
+    if (temp == "warm" && humiduty == "dry"){
+        return "Play tennis";
+    }
+   else if (temp == "warm" && humiduty == "humid"){
+    return "Swim";
+   }
+   else if (temp == "cold" && humiduty == "dry")
+   {
+    return "Play basketball";
+   }
+   else{
+    return "Watch TV";
+   }
+   
+float calPer(float eng, float math, float chem, float socialsci, float bio){
+    float calPercentage;
+    calPercentage = ((eng + math + chem + socialsci + bio)/500) * 100;
+
+      return calPercentage;
+}
+string calGrade(float per){
+   
+    if (per >= 90 && per <= 100){
+        return "A+";
+
+    }
+    else if(per >= 80 && per <= 90){
+        return "A";
+
+    }
+    else if (per >= 70 && per <= 80)
+    {
+        return "B+";
+    }
+    else if (per >=60 && per <= 70)
+    {
+        return "B";
+    }
+    else if (per >= 50 &&  per <= 60)
+    {
+        return "C";
+    }
+    else if (per >= 40 && per <= 50)
+    {
+        return "D";
+        /* code */
+    }
+    else {
+        return "F";
+    }
+    
+    
+    
+}
+
+string findZodiacsign(int day, string month){
+    if ((month == "March" &&  day >=  21 && day <= 31) || (month == "April"&&  day <= 19))
+    {
+        return "Aries";
+    }
+    else if ((month == "April" &&  day >=  20) && day <= 30 || (month == "May"&&  day <= 20))
+    {
+        return "Taurus";
+    }
+    else if ((month == "May" &&  day >=  21 && day <= 31) || (month == "June"&&  day <= 20))
+    {
+        return "Gemini";
+    }
+     else if ((month == "June" &&  day >=  21 && day <= 30) || (month == "July"&&  day <= 22))
+    {
+        return "Cancer";
+    }
+     else if ((month == "July" &&  day >=  23 && day <= 31) || (month == "August"&&  day <= 22))
+    {
+        return "Leo";
+    }
+     else if ((month == "August" &&  day >=  23 && day <= 31) || (month == "September"&&  day <= 22))
+    {
+        return "Virgo";
+    }
+     else if ((month == "Septempber" &&  day >=  23 && day <= 30) || (month == "October"&&  day <= 22))
+    {
+        return "Libra";
+    }
+     else if ((month == "October" &&  day >=  23 && day <= 31) || (month == "November"&&  day <= 21))
+    {
+        return "Scorpio";
+    }
+     else if ((month == "November" &&  day >=  22 && day <= 30) || (month == "December"&&  day <= 21))
+    {
+        return "Sagittarius";
+    }
+     else if ((month == "Decembar" &&  day >=  22 && day <= 31) || (month == "Januray"&&  day <= 19))
+    {
+        return "Capricon";
+    }
+     else if ((month == "January" &&  day >=  20 && day <= 31) || (month == "Feburary"&&  day <= 18))
+    {
+        return "Aquarius";
+    }
+      else if ((month == "February" &&  day >=  19 && day <= 28) || (month == "March"&&  day <= 20))
+    {
+        return "Pisces";
+    }
+    else{
+        return "no range";
+    }
+    
+    
+    
+}
+    cin >> qty;
+    if ((day == "Sunday" || day == "Monday" || day == "Tuesday" || day == "wednesday" || day == "Thursday" || day == "Friday" || day == "Saturday"))
+    {
+        float result = calPrice(friut, day, qty);
+        cout << result;
+    }
+    else{
+        cout<<"error";
+    }
+}
+float calPrice(string fruit, string day, float qty)
+{
+    float Price;
+    if (day == "Sunday" || day == "sunday")
+
+    {
+        if (fruit == "banana")
+        {
+            Price = 2.70 * qty;
+        }
+        else if (fruit == "apple")
+        {
+            Price = 1.25 * qty;
+        }
+        else if (fruit == "orange")
+        {
+            Price = 0.90 * qty;
+        }
+        else if (fruit == "grapefruit")
+        {
+            Price = 1.60 * qty;
+        }
+        else if (fruit == "kiwi")
+        {
+            Price = 3.00 * qty;
+        }
+        else if (fruit == "pineapple")
+        {
+            Price = 5.60 * qty;
+        }
+        else if (fruit == "grapes")
+        {
+            Price = 4.20 * qty;
+        }
+    }
+    else if (day == "Monday" || day == "Tuesday" || day == "wednesday" || day == "Thursday" || day == "Friday" || day == "Saturday")
+    {
+
+        if (fruit == "banana")
+        {
+            Price = 2.50 * qty;
+        }
+        else if (fruit == "apple")
+        {
+            Price = 1.20 * qty;
+        }
+        else if (fruit == "orange")
+        {
+            Price = 0.85 * qty;
+        }
+        else if (fruit == "grapefruit")
+        {
+            Price = 1.45 * qty;
+        }
+        else if (fruit == "kiwi")
+        {
+            Price = 2.70 * qty;
+        }
+        else if (fruit == "pineapple")
+        {
+            Price = 5.50 * qty;
+        }
+        else if (fruit == "grapes")
+        {
+            Price = 3.85 * qty;
+        }
+    }
+    else
+    {
+        cout << "error";
+    }
+    return Price;
+}
+
+double calPriceStudio(string month, int stays)
+{
+    double price;
+    double dis;
+    if (month == "May" || month == "October")
+    {
+        if (stays <= 7)
+        {
+            price = 50 * stays;
+            /* code */
+        }
+        if (stays > 7 && stays <= 14)
+
+        {
+            price = 50 * stays;
+            dis = (5 * price) / 100;
+            price = price - dis;
+        }
+        if (stays > 14)
+        {
+            price = 50 * stays;
+            dis = (30 * price) / 100;
+            price = price - dis;
+        }
+    }
+    else if (month == "June" || month == "September")
+    {
+        if (stays <= 14)
+        {
+            price = 75.20 * stays;
+            /* code */
+        }
+        else
+        {
+            price = 75.20 * stays;
+            dis = (20 * price) / 100;
+            price = price - dis;
+        }
+    }
+    else if (month == "July" || month == "August")
+    {
+
+        price = 76 * stays;
+    }
+    return price;
+}
+double calPriceApart(string month, int stays)
+{
+    double price;
+    double dis;
+    if (month == "May" || month == "October")
+    {
+        if (stays <= 14)
+        {
+            price = 65 * stays;
+            /* code */
+        }
+        else
+        {
+            price = 65 * stays;
+            dis = (10 * price) / 100;
+            price = price - dis;
+        }
+    }
+    else if (month == "June" || month == "September")
+    {
+        if (stays <= 14)
+        {
+            price = 68.70 * stays;
+            /* code */
+        }
+        else
+        {
+            price = 68.70 * stays;
+            dis = (10 * price) / 100;
+            price = price - dis;
+        }
+    }
+    else if (month == "July" || month == "August")
+    {
+        if (stays < 14)
+        {
+            price = 77 * stays;
+            /* code */
+        }
+        else
+        {
+            price = 77 * stays;
+            dis = (10 * price) / 100;
+            price = price - dis;
+        }
+    }
+    return price;
+}
+string timeCal(int hour, int mint, int studentArrHour, int studentArrMint)
+{
+    int examStartingTimeInMint;
+    int studentCompleteTimeInMints;
+    int differenceOfTime;
+    int arrHours;
+    int arrMints;
+    examStartingTimeInMint = (hour * 60) + mint; // converts whole time into minutes
+    studentCompleteTimeInMints = (studentArrHour * 60) + studentArrMint;
+    if (hour > studentArrHour)
+    {
+
+        differenceOfTime = examStartingTimeInMint - studentCompleteTimeInMints;
+        arrHours = differenceOfTime / 60;
+        arrMints = differenceOfTime - (arrHours * 60);
+        if (arrHours == 0)
+        {
+            return to_string(arrMints) + " minutes before the start";
+        }
+        return to_string(arrHours) + ":" + to_string(arrMints) + " hours before the start";
+    }
+    else if (hour == studentArrHour && mint == studentArrMint)
+    {
+        return "On time";
+    }
+    else
+    {
+        differenceOfTime = studentCompleteTimeInMints - examStartingTimeInMint;
+        arrHours = differenceOfTime / 60;
+        arrMints = differenceOfTime - (arrHours * 60);
+        if (arrHours == 0)
+        {
+            return to_string(arrMints) + " minutes after the start";
+        }
+        return to_string(arrHours) + ":" + to_string(arrMints) + " hours after the start";
+    }
+}
+
+float calPd(string year, int holidays, int weekendstoHometown)
+{
+    float totalPlayingInSofia, playingOtherdays, playingInHomeTown;
+    float finalPlaying;
+    int weekendsOfYear = 48;
+    float per;
+    float finalPlyaingForLeapYear;
+    totalPlayingInSofia = weekendsOfYear*3/4 ; //36
+       playingOtherdays = (holidays*2/3);
+
+    if (year == "normal")
+    {
+       
+       finalPlaying = playingOtherdays + totalPlayingInSofia ;
+        return round(finalPlaying);
+    }
+    else
+    {
+      
+       finalPlaying = playingOtherdays + totalPlayingInSofia ;
+       per = finalPlaying * 0.15f;
+       finalPlyaingForLeapYear = (finalPlaying + per);
+       return round(finalPlyaingForLeapYear);
+
+    }
+
+    //Roundoff is remaining 
+ 
+
+
+    
+
+}
